@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container mx-auto w-full h-screen flex justify-center items-center">
+        <div class="flex justify-center items-center h-fit w-full">
+            <div class="relative p-5 min-h-[550px] sm:min-h-[550px] w-full max-w-sm md:max-w-md sm:w-5/6 mb-4 sm:mt-12 rounded-3xl sm:w-96 md:ml-6 sm:overflow-visible overflow-hidden sm:rounded bg-indigo-700/95 text-white flex flex-col justify-between items-stretch">
+                <h2 class="sm:flex absolute top-[-25px] left-[-80px] -z-10 font-mono text-[110px] font-black leading-100 text-white rotate-180 hidden text-sideways select-none pointer-events-none">Quizzz</h2>
+                <!-- Refactor into one element-->
+                <div class="absolute right-0 bottom-[-10px] mr-[-42px] h-full font-mono text-[100px] font-black leading-100 opacity-50 rotate-180 flex sm:hidden text-black text-sideways select-none pointer-events-none">Quizzz</div>
+                <div id="header" class="relative z-10 justify-between items-start font-sans text-10 tracking-15 uppercase flex text-9 justify-between w-full mb-12">
+                    <span id="theme" class="block text-lg font-bold tracking-widest text-black/50">Theme</span>
+                    <svg class="w-16" id="svg" viewBox="0 0 95 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_10_2)">
+                            <path d="M39.9142 37.4545C44.8412 31.7008 50.1588 31.7008 55.0858 37.4545C57.9442 40.7997 61.7611 43.1893 66.0219 44.3012C70.2827 45.4132 74.7825 45.1939 78.9146 43.6731C83.0468 42.1522 86.6125 39.4029 89.1311 35.7958C91.6497 32.1886 93 27.8972 93 23.5C93 19.1028 91.6497 14.8114 89.1311 11.2042C86.6125 7.59712 83.0468 4.84779 78.9146 3.32694C74.7825 1.80608 70.2827 1.58684 66.0219 2.69876C61.7611 3.81069 57.9442 6.20032 55.0858 9.54546C50.1588 15.2993 44.8412 15.2993 39.9142 9.54546C37.0558 6.20032 33.2389 3.81069 28.9781 2.69876C24.7173 1.58684 20.2175 1.80608 16.0854 3.32694C11.9532 4.84779 8.38751 7.59712 5.86892 11.2042C3.35033 14.8114 2 19.1028 2 23.5C2 27.8972 3.35033 32.1886 5.86892 35.7958C8.38751 39.4029 11.9532 42.1522 16.0854 43.6731C20.2175 45.1939 24.7173 45.4132 28.9781 44.3012C33.2389 43.1893 37.0558 40.7997 39.9142 37.4545Z" fill="url(#paint0_linear_10_2)" stroke="#3CFFD0" stroke-width="4" />
+                            <text fill="#271F9A" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="20" font-weight="bold" letter-spacing="0em">
+                                <tspan x="17" y="31.2727" id="currentQuestion">1</tspan>
+                            </text>
+                            <text fill="#3CFFD0" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="20" font-weight="bold" letter-spacing="0em">
+                                <tspan x="65" y="32.2727" id="totalQuestions">n</tspan>
+                            </text>
+                        </g>
+                        <defs>
+                            <linearGradient id="paint0_linear_10_2" x1="92.9895" y1="2.0137" x2="-0.500002" y2="2.0137" gradientUnits="userSpaceOnUse">
+                                <stop offset="0.394496" stop-color="#271F9A" />
+                                <stop offset="0.433657" stop-color="#2A3BA1" />
+                                <stop offset="0.453238" stop-color="#2C54A7" />
+                                <stop offset="0.486525" stop-color="#318DB5" />
+                                <stop offset="0.51198" stop-color="#37C4C2" />
+                                <stop offset="0.523729" stop-color="#39E0C9" />
+                                <stop offset="0.545267" stop-color="#3BF1CD" />
+                                <stop offset="0.57268" stop-color="#3CFFD0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+    
+                </div>
+                <h3 id="question" class="mb-7 w-full text-left font-mono text-xl font-medium leading-110 z-10">Question is loading...</h3>
+                <!-- shadow-[rgba(57,239,195,1)_0px_-50px_0px_0_inset] -->
+                <ol id="answers" class="w-full list-none styled-counter-compact ">
+    
+                </ol>
+                <div class="w-full flex space-x-4 justify-end flex-row " id="controls">
+                    <button id="previous" onclick="showPrevious()" class="basis-1/2 border-cyan-600 border rounded-sm p-2 hidden">Back</button>
+                    <button id="next" onclick="showNext()" class="basis-1/2 border-cyan-600 border rounded-sm p-2 hidden">Next</button>
+                    <button id="submit" onclick="showNext()" class="basis-1/2 border-cyan-600 border rounded-sm p-2 hidden">Finish</button>
+                    <button id="restart" onclick="restartQuiz()" class="basis-full shrink-0 border-cyan-600 border rounded-sm p-2 hidden">Restart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

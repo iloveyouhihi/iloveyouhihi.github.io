@@ -1,0 +1,8 @@
+.text-sideways {
+	text-orientation: sideways;
+	writing-mode: vertical-lr;
+}
+
+.container {
+    background-image: linear-gradient(315deg, #c8d81e 0%, #6dc2c2 100%);
+}
