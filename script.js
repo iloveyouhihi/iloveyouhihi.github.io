@@ -125,7 +125,7 @@ function showNext() {
         if (answerChecked == 1 || answerChecked == 0 || answerChecked == 2) {
             swal("Đúng rùi!", "Hoàn thành!", "success")
             .then((value) => {
-                swal("Phần thưởng của Ngân Hoàng là 1 cái hôn và 1 chuyến du lịch Hải Phòng cùng Phong Trần!")
+                swal("Phần thưởng của Ngân Hoàng là 1 cái hun chụt chụt!")
                 .then((value) => {
                     console.log('test');
                     window.location.href = '/firework.html'
